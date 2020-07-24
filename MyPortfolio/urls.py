@@ -18,10 +18,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 import Work.views
-import Blog.views
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Work.views.homepage, name='home'),
-    path('blog',Blog.views.blogpage, name='blog')
+    path('blog/', include('Blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
