@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,8 +53,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link " href="#">Instagram</a>
-                  <a class="nav-item nav-link " href="#">Resume</a>
+                  <a class="nav-item nav-link " href="https://www.instagram.com/khalidhabbash/">Instagram</a>
+                  <a class="nav-item nav-link " href="{% static 'Khalids Final Resume.pdf' %}">Resume</a>
                   <a class="nav-item nav-link " href="blog">Blog</a>
               </div>
           </div>
@@ -65,11 +66,13 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1>Hi, I am Khalid</h1>
+         <img class="img-fluid" height="100" width="180" src="{% static 'IMG_8023 V2.jpg' %}"/>
       <p class="lead text-muted">A 19 year old currently studying Computer Science in Simon Fraser University. My hobby is boxing, I aspire to one day hopefully
       be a great boxer. I love to learn new things, that is why I have created this portfolio about me! I started web development not too long ago (July 18, 2020) using Django and Python.
       My biggest dream is to leave my fingerprint in this world by changing people's lives to the better.</p>
+
       <p>
-        <a href="mailto:khalidhabbash987@gmail.com" class="btn btn-primary my-2">Contact me</a>
+        <a href="mailto:khalidhabbash987@gmail.com" class="btn btn-primary my-2">Contact Me</a>
       </p>
     </div>
   </section>

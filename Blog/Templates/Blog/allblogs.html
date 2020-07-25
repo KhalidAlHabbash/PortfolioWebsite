@@ -45,16 +45,17 @@
   </head>
   <body>
   <header>
+      {% load static %}
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Khalid AlHabbash</a>
+          <a class="navbar-brand" href="{% url 'home'%}">Khalid AlHabbash</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link " href="#">Instagram</a>
-                  <a class="nav-item nav-link " href="#">Resume</a>
-                  <a class="nav-item nav-link active" href="blog">Blog</a>
+                  <a class="nav-item nav-link " href="https://www.instagram.com/khalidhabbash/">Instagram</a>
+                  <a class="nav-item nav-link " href="{% static 'Khalids Final Resume.pdf' %}">Resume</a>
+                  <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
               </div>
           </div>
       </nav>
@@ -68,8 +69,8 @@
     <br/>
     <h2 margin-left:30px;>Latest Blogs</h2>
     <hr/>
-        {% for blogs in all_blogs.all%}
-        <a href=""><h4>{{ blogs.title }}</h4><a/>
+        {% for blogs in all_blogs.all %}
+        <a href="{% url 'detail' blogs.id %}"><h4>{{ blogs.title }}</h4><a/>
             <strong>{{ blogs.pub_date }}</strong><br/>
         <img class ="img-fluid" width="325" height="325" src="{{ blogs.blog_image.url }}"/>
             <br/>
@@ -93,7 +94,7 @@
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
-    <p>&copy; Khalid AlHabbash - {% now "Y" %}, for queries please use the Contact me button at the top.</p>
+    <p>&copy; Khalid AlHabbash - {% now "Y" %}, for queries please use the Contact Me button at the top.</p>
 
   </div>
 </footer>
