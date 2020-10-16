@@ -1,2 +1,2 @@
 # PortfolioWebsite
-My portfolio 
+My portfolio, includes my resume, all my work done ranging from volunteer work to coding projects!
